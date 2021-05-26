@@ -30,7 +30,22 @@
         }
 
         .bottom-bar{
-            text-align: right;
+            /* text-align: right; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* Answer results */
+        .incorrect input, .incorrect input:focus{
+            border-color: red!important;
+            border-width: 2px!important;
+            background: lightpink!important;
+        }
+        .correct input{
+            border-color: green;
+            border-width: 2px;
+            background: lightgreen;
         }
     </style>
 
@@ -46,7 +61,7 @@
 
         <!-- Photo -->
         <div class="container-fluid d-flex justify-content-center my-5">
-        <img src="https://i.pinimg.com/originals/ed/c0/f6/edc0f6b82d6f894acdc825ef38ca8136.jpg" alt="" class="">
+        <img src="https://lh5.googleusercontent.com/0QwBOoORYVkrvL6INp5WxLSCCeceNdDX1MVkx5HImknBjcoEHu4Gj3UrC1A9zH_Y-bAzaqyXvrHfB_Hh-nWa=w3141-h1818" alt="" class="">
         </div>
 
         <!-- Answer -->
@@ -63,16 +78,122 @@
                 <li><input type="text" class="form-control" id="answer7"></li>
                 <li><input type="text" class="form-control" id="answer8"></li>
                 <li><input type="text" class="form-control" id="answer9"></li>
+                <li><input type="text" class="form-control" id="answer10"></li>
+                <li><input type="text" class="form-control" id="answer11"></li>
+                <li><input type="text" class="form-control" id="answer12"></li>
             </ol>
         </div>
 
         <!-- Back to assessments -->
         <div class="container-fluid bottom-bar mb-5">
-            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
-            <input type="submit" class="btn btn-lg btn-primary" value="Submit">
+            <div class="score">
+                <h4>Score: <strong id="score">0</strong>/12</h4>
+            </div>
+            <div class="controls">
+                <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+                <input type="submit" class="btn btn-lg btn-primary" id="submit" value="Submit">
+            </div>
         </div>
         </form>
     </div>
+
+    <script>
+        $("#submit").click(function(e){
+            e.preventDefault();
+            $('li').removeClass("correct incorrect");
+            // $('li').removeClass("incorrect");
+
+            var answer1 = $("#answer1");
+            var answer2 = $("#answer2");
+            var answer3 = $("#answer3");
+            var answer4 = $("#answer4");
+            var answer5 = $("#answer5");
+            var answer6 = $("#answer6");
+            var answer7 = $("#answer7");
+            var answer8 = $("#answer8");
+            var answer9 = $("#answer9");
+            var answer10 = $("#answer10");
+            var answer11 = $("#answer11");
+            var answer12 = $("#answer12");
+
+            if (answer1.val().toLowerCase() == "zonule fibers") {
+            answer1.parent().addClass('correct')
+            } else {
+                answer1.parent().addClass('incorrect')
+            }
+
+            if (answer2.val().toLowerCase() == "iris") {
+            answer2.parent().addClass('correct')
+            } else {
+                answer2.parent().addClass('incorrect')
+            }
+
+            if (answer3.val().toLowerCase() == "lens") {
+            answer3.parent().addClass('correct')
+            } else {
+                answer3.parent().addClass('incorrect')
+            }
+
+            if (answer4.val().toLowerCase() == "light") {
+            answer4.parent().addClass('correct')
+            } else {
+                answer4.parent().addClass('incorrect')
+            }
+
+            if (answer5.val().toLowerCase() == "cornea") {
+            answer5.parent().addClass('correct')
+            } else {
+                answer5.parent().addClass('incorrect')
+            }
+
+            if (answer6.val().toLowerCase() == "aqueous humor") {
+            answer6.parent().addClass('correct')
+            } else {
+                answer6.parent().addClass('incorrect')
+            }
+
+            if (answer7.val().toLowerCase() == "ciliary muscle") {
+            answer7.parent().addClass('correct')
+            } else {
+                answer7.parent().addClass('incorrect')
+            }
+
+            if (answer8.val().toLowerCase() == "vitreous humor") {
+            answer8.parent().addClass('correct')
+            } else {
+                answer8.parent().addClass('incorrect')
+            }
+
+            if (answer9.val().toLowerCase() == "sclera") {
+            answer9.parent().addClass('correct')
+            } else {
+                answer9.parent().addClass('incorrect')
+            }
+
+            if (answer10.val().toLowerCase() == "optic nerve") {
+            answer10.parent().addClass('correct')
+            } else {
+                answer10.parent().addClass('incorrect')
+            }
+
+            if (answer11.val().toLowerCase() == "fovea") {
+            answer11.parent().addClass('correct')
+            } else {
+                answer11.parent().addClass('incorrect')
+            }
+
+            if (answer12.val().toLowerCase() == "retina") {
+            answer12.parent().addClass('correct')
+            } else {
+                answer12.parent().addClass('incorrect')
+            }
+
+            var num_correct = $('.correct').length
+            $("#score").html(num_correct);
+            console.log(num_correct)
+        });
+        
+    </script>
 </body>
 
 {% endblock %}

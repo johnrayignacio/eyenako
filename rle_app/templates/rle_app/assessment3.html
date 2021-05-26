@@ -34,9 +34,23 @@
             margin-bottom: 5px;
         }
 
-        .bottom-bar{
-            text-align: right;
+        input[type=text]{
+            display: inline!important;
+            width: 90%!important;
         }
+
+        /* Answer results */
+        .incorrect input, .incorrect input:focus{
+            border-color: red!important;
+            border-width: 2px!important;
+            background: lightpink!important;
+        }
+        .correct input{
+            border-color: green;
+            border-width: 2px;
+            background: lightgreen;
+        }
+
     </style>
 
     <title>Assessment: Eye will complete</title>
@@ -51,7 +65,7 @@
 
         <!-- Photo -->
         <div class="container-fluid d-flex justify-content-center my-5">
-        <img src="https://www.edubakery.com/images/edu/Sample-School-Crossword.png" alt="" class="">
+            <img src="https://lh3.google.com/u/0/d/1mvN4egsrhjTOIYLwsHDFFWZ4KQ6-Ake2=w2970-h1818-iv1" alt="" class="w-75">
         </div>
 
         <!-- Answer -->
@@ -60,31 +74,123 @@
             <h4 class="mb-4">Input your answers below</h4>
             <div class="row text-center">
                 <div class="col col-md-6">
-                    <h5>Across</h5>
-                    <ol>
-                        <li><input type="text" class="form-control"></li>
-                        <li><input type="text" class="form-control"></li>
-                        <li><input type="text" class="form-control"></li>
+                    <h5>Down</h5>
+                    <ol class="list-unstyled">
+                        <li><span>1. </span><input type="text" class="form-control" id="answer1"></li>
+                        <li>2. <input type="text" class="form-control" id="answer2"></li>
+                        <li>3. <input type="text" class="form-control" id="answer3"></li>
+                        <li>4. <input type="text" class="form-control" id="answer4"></li>
+                        <li>6. <input type="text" class="form-control" id="answer5"></li>
                     </ol>
                 </div>
                 <div class="col col-md-6">
-                    <h5>Down</h5>
-                    <ol>
-                        <li><input type="text" class="form-control"></li>
-                        <li><input type="text" class="form-control"></li>
-                        <li><input type="text" class="form-control"></li>
+                    <h5>Across</h5>
+                    <ol class="list-unstyled">
+                        <li>5. <input type="text" class="form-control" id="answer6"></li>
+                        <li>7. <input type="text" class="form-control" id="answer7"></li>
+                        <li>8. <input type="text" class="form-control" id="answer8"></li>
+                        <li>9. <input type="text" class="form-control" id="answer9"></li>
+                        <li>10. <input type="text" class="form-control" id="answer10"></li>
                     </ol>
                 </div>
             </div>
         </div>
 
         <!-- Back to assessments -->
-        <div class="container-fluid bottom-bar mb-5">
-            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
-            <input type="submit" class="btn btn-lg btn-primary" value="Submit">
+        <div class="container-fluid d-flex justify-content-between mb-5">
+            <div class="score">
+                <h4><strong id="score">0</strong>/10 correct</h4>
+            </div>
+            <div class="controls">
+                <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+                <input type="submit" class="btn btn-lg btn-primary" id="submit" value="Submit">
+            </div>
         </div>
         </form>
     </div>
+    <script>
+        $("#submit").click(function(e){
+            e.preventDefault();
+            $('li').removeClass("correct incorrect");
+            // $('li').removeClass("incorrect");
+
+            var answer1 = $("#answer1");
+            var answer2 = $("#answer2");
+            var answer3 = $("#answer3");
+            var answer4 = $("#answer4");
+            var answer5 = $("#answer5");
+            var answer6 = $("#answer6");
+            var answer7 = $("#answer7");
+            var answer8 = $("#answer8");
+            var answer9 = $("#answer9");
+            var answer10 = $("#answer10");
+
+            if (answer1.val().toLowerCase() == "uvetitis") {
+            answer1.parent().addClass('correct')
+            } else {
+                answer1.parent().addClass('incorrect')
+            }
+
+            if (answer2.val().toLowerCase() == "glaucoma") {
+            answer2.parent().addClass('correct')
+            } else {
+                answer2.parent().addClass('incorrect')
+            }
+
+            if (answer3.val().toLowerCase() == "retinaldetachment") {
+            answer3.parent().addClass('correct')
+            } else {
+                answer3.parent().addClass('incorrect')
+            }
+
+            if (answer4.val().toLowerCase() == "chalazion") {
+            answer4.parent().addClass('correct')
+            } else {
+                answer4.parent().addClass('incorrect')
+            }
+
+            if (answer5.val().toLowerCase() == "late") {
+            answer5.parent().addClass('correct')
+            } else {
+                answer5.parent().addClass('incorrect')
+            }
+
+            if (answer6.val().toLowerCase() == "babyshaken") {
+            answer6.parent().addClass('correct')
+            } else {
+                answer6.parent().addClass('incorrect')
+            }
+
+            if (answer7.val().toLowerCase() == "legalblindness") {
+            answer7.parent().addClass('correct')
+            } else {
+                answer7.parent().addClass('incorrect')
+            }
+
+            if (answer8.val().toLowerCase() == "vitrectomy") {
+            answer8.parent().addClass('correct')
+            } else {
+                answer8.parent().addClass('incorrect')
+            }
+
+            if (answer9.val().toLowerCase() == "keratoconiunctivitiessicca") {
+            answer9.parent().addClass('correct')
+            } else {
+                answer9.parent().addClass('incorrect')
+            }
+
+            if (answer10.val().toLowerCase() == "blackeye") {
+            answer10.parent().addClass('correct')
+            } else {
+                answer10.parent().addClass('incorrect')
+            }
+
+            var num_correct = $('.correct').length
+            $("#score").html(num_correct);
+            console.log(num_correct)
+        });
+        
+    </script>
 </body>
 
 {% endblock %}
