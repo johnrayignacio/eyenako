@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: 'Poppins';
+            padding: 0;
+            background: #f8f5ec;
+        }
+        p{
+            font-family: 'Open Sans'
+        }
+
+        /* FOOTER */
+        .footer{
+            background: lightgray;
+            color: dimgray;
+            font-size: 0.95em;
+        }
+        .footer h5{
+            font-weight: 600;
+            color: black
+        }
+        .footer li{
+            padding-top: 3px;
+        }
+        .footer .fab{
+            font-size: 25px;
+            position: relative;
+            top: 5px;
+        }
+        #contacts span{
+            color: black;
+        }
+        .footer .socmed{
+            text-align: left;
+            padding: 0 auto;
+        }
+        .footer .socmed span{
+            padding-left:5px;
+            color: black;
+        }
+        .footer .socmed a:hover{
+            text-decoration: none;
+        }
+        .footer .form-control{
+            background: whitesmoke;
+            font-size: 14px;
+            font-family: "Open Sans"
+        }
+    </style>
+
+    <!-- <title>MAIN</title> -->
+</head>
+<body>
+
+    {% include 'rle_app/navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <br>
+     <!-- FOOTER -->
+    <div class="container-fluid px-5 footer">
+        <div class="row py-3">
+            <div class="col-md-4 py-3">
+                <h5>Contacts</h5>
+                <ul class="list-unstyled" id="contacts">
+                    <li><span>Email:</span> RLE1-3NUR2@gmail.com</li>
+                    <li><span>Phone:</span> +63 999 999 9999</li>
+                    <li><span>Tel:</span> (02)8588-8888</li>
+                    <li>ⓒ John Ray Ignacio</li>
+                </ul>
+            </div>
+            <div class="col-md-4 socmed py-3" id="contacts">
+                <h5>Social Media</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-facebook-square" style="color: #3b5998"></i><span>EyeNako FB page</span></a>
+                    </li>
+
+                    <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-twitter-square" style="color: #08a0e9"></i><span>EyeNako Twitter</span></a>
+                    </li>
+
+                    <li><a href="https://github.com/johnrayignacio" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-github-square" style="color: black"></i><span>EyeNako Github</span></a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-4 form-group py-3">
+                <h5>Leave a message</h5>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Aa"></textarea>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

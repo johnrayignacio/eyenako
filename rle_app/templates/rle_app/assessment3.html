@@ -1,0 +1,90 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+
+<head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-assessment").addClass("active");
+        });
+    </script>
+
+    <style>
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            color: navy;
+        }
+
+        h5{
+            font-weight: bold;
+        }
+
+        .title-info{
+            font-size: 24px;
+        }
+
+        /* Answers */
+        .form-control{
+            /* width: 50%; */
+            margin-left: 15px;
+        }
+        li{
+            margin-bottom: 5px;
+        }
+
+        .bottom-bar{
+            text-align: right;
+        }
+    </style>
+
+    <title>Assessment: Eye will complete</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid my-5 text-center">
+            <h1 class="pb-3">Eye will complete</h1>
+            <p class="title-info">Complete and fill in the <strong>crossword puzzle</strong> based on the given descriptions</p>
+        </div>
+
+        <!-- Photo -->
+        <div class="container-fluid d-flex justify-content-center my-5">
+        <img src="https://www.edubakery.com/images/edu/Sample-School-Crossword.png" alt="" class="">
+        </div>
+
+        <!-- Answer -->
+        <form action="">
+        <div class="container-fluid my-5">
+            <h4 class="mb-4">Input your answers below</h4>
+            <div class="row text-center">
+                <div class="col col-md-6">
+                    <h5>Across</h5>
+                    <ol>
+                        <li><input type="text" class="form-control"></li>
+                        <li><input type="text" class="form-control"></li>
+                        <li><input type="text" class="form-control"></li>
+                    </ol>
+                </div>
+                <div class="col col-md-6">
+                    <h5>Down</h5>
+                    <ol>
+                        <li><input type="text" class="form-control"></li>
+                        <li><input type="text" class="form-control"></li>
+                        <li><input type="text" class="form-control"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to assessments -->
+        <div class="container-fluid bottom-bar mb-5">
+            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+            <input type="submit" class="btn btn-lg btn-primary" value="Submit">
+        </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

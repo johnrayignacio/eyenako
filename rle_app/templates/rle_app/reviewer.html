@@ -1,0 +1,60 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Reviewer</title>
+
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-reviewer").addClass("active");
+        });
+    </script>
+
+    <style>
+        body{
+            background: #f8f5ec;
+        }
+
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+            color: navy;
+        }
+
+        h5{
+            font-weight: bold;
+        }
+
+        .title-info{
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="container-fluid my-5 px-0">
+            <h1>Refresher about the human eye</h1>
+        </div>
+        <h3>Section Title</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit suscipit dolore vel. Exercitationem iure nisi omnis provident. Modi, laborum doloremque!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium cumque eligendi sit distinctio laboriosam magnam? Provident, cum modi aliquam odit rerum aliquid quasi officiis eius nihil ea, consequuntur blanditiis nobis sed officia? Quia dolorem ullam optio. Non sed iure harum! Nam porro fugiat corporis at commodi sapiente exercitationem aspernatur laboriosam nesciunt? Quis reiciendis accusamus totam illum libero recusandae consectetur molestias nihil incidunt ab magnam consequatur harum, nam aliquid voluptas ullam, magni quisquam quaerat repudiandae tempora possimus ipsam odit perferendis architecto.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, corporis voluptatibus odio numquam sint error fugiat consequuntur dolorem nemo porro animi vel magnam consequatur? Doloribus velit harum error sed numquam.</p>
+        <br>
+        <h3>Section Title 2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae est magnam doloremque soluta molestias delectus ab suscipit beatae, assumenda distinctio officiis a reiciendis iusto ipsa et ex dignissimos ut excepturi enim animi. Atque, eum voluptas. Alias omnis sapiente corrupti doloremque.</p>
+
+        <br>
+
+        <h3>Section Title 3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae est magnam doloremque soluta molestias delectus ab suscipit beatae, assumenda distinctio officiis a reiciendis iusto ipsa et ex dignissimos ut excepturi enim animi. Atque, eum voluptas. Alias omnis sapiente corrupti doloremque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, ad.</p>
+    </div>
+</body>
+{% endblock %}

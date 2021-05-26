@@ -1,0 +1,103 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+
+<head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-assessment").addClass("active");
+        });
+    </script>
+
+    <style>
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            color: navy;
+        }
+
+        h5{
+            font-weight: bold;
+        }
+
+        .title-info{
+            font-size: 24px;
+        }
+
+        /* Answers */
+        .form-control{
+            /* width: 50%; */
+            margin-left: 15px;
+        }
+        li{
+            margin-bottom: 5px;
+        }
+        .item1{
+            margin-bottom: 20px;
+        }
+
+        .bottom-bar{
+            text-align: right;
+        }
+    </style>
+
+    <title>Assessment: Eye-though, Eye-m fine</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid my-5 text-center">
+            <h1 class="pb-3">Eye thought, Eye-m fine</h1>
+            <p class="title-info">Match the information on the left by selecting the correct information on the right.</p>
+        </div>
+
+        <!-- Answer -->
+        <form action="">
+        <div class="container-fluid my-5">
+            <h4 class="mb-4">Input your answers below</h4>
+            <div class="row text-center">
+                <div class="col col-md-6">
+                    <h5>Item 1</h5>
+                    <ol class="text-left items-1">
+                        <li class="item1">Apple</li>
+                        <li class="item1">Basketball</li>
+                        <li class="item1">Caterpillar</li>
+                    </ol>
+                </div>
+                <div class="col col-md-6">
+                    <h5>Item 2</h5>
+                    <ol>
+                        <li><select id="answer1" class="form-control">
+                            <option disabled selected value> -- Select an option -- </option>
+                            <option>Sports</option>
+                            <option>Insects</option>
+                            <option>Fruits</option>
+                          </select></li>
+                        <li><select id="answer2" class="form-control">
+                            <option disabled selected value> -- Select an option -- </option>
+                            <option>Sports</option>
+                            <option>Insects</option>
+                            <option>Fruits</option>
+                        </select></li>
+                        <li><select id="answer3" class="form-control">
+                            <option disabled selected value> -- Select an option -- </option>
+                            <option>Sports</option>
+                            <option>Insects</option>
+                            <option>Fruits</option>
+                        </select></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to assessments -->
+        <div class="container-fluid bottom-bar mb-5">
+            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+            <input type="submit" class="btn btn-lg btn-primary" value="Submit">
+        </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

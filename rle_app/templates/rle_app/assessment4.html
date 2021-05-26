@@ -1,0 +1,146 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+
+<head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-assessment").addClass("active");
+        });
+    </script>
+
+    <style>
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            color: navy;
+        }
+        .title-info{
+            font-size: 24px;
+        }
+
+        /* Answers */
+        .form-control{
+            /* width: 50%; */
+            margin-left: 15px;
+        }
+        li{
+            padding-left: 20px;
+            padding-top: 10px;
+            border-radius: 20px;
+        }
+
+        .bottom-bar{
+            text-align: right;
+        }
+        .checker{
+            margin-top: 5px;
+        }
+        .card{
+            margin-bottom: 15px;
+        }
+
+        /* Answer results */
+        .incorrect{
+            background: lightcoral;
+        }
+        .correct{
+            background: lightgreen;
+        }
+    </style>
+
+    <title>Assessment: Eye-thought, Eye-m fine</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid my-5 text-center">
+            <h1 class="pb-3">Eye care for you</h1>
+            <p class="title-info">A series of multiple choice questions about <strong>treatment and nursing responsibilities</strong>.</p>
+        </div>
+
+        <!-- Answer -->
+        <form action="" method="GET" name="answer1">
+        <div class="container my-5">
+            <h4>Answer the questions below</h4>
+            
+            <div class="card">
+                <div class="card-header">Question 1</div>
+                <div class="card-body">
+                    <div class="card-title">What is the Lorem ipsum dolor sit amet.?</div>
+                    <hr>
+                    <ul class="list-unstyled list1">
+                        <li><input type="radio" id="1A" name="1" value="1A">
+                        <label for="1A">A. Apple</label></li>
+                        <li><input type="radio" id="1B" name="1" value="1B">
+                        <label for="1B">B. Banana</label></li>
+                        <li><input type="radio" id="1C" name="1" value="1C">
+                        <label for="1C">C. Carrot</label></li>
+                        <li><input type="radio" id="1D" name="1" value="1D">
+                        <label for="1D">D. Dragonfruit</label></li>
+                    </ul>
+                    <a href="#" class="btn btn-success checker" id="check1">Check</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Question 2</div>
+                <div class="card-body">
+                    <div class="card-title">What is the ipsum dolor, sit amet consectetur adipisicing elit. Quo nihil perspiciatis, voluptate ipsa molestiae similique.?</div>
+                    <hr>
+                    <ul class="list-unstyled list2">
+                   <li><input type="radio" id="2A" name="2" value="2A">
+                    <label for="2A">A. Apple</label></li>
+                    <li><input type="radio" id="2B" name="2" value="2B">
+                    <label for="2B">B. Banana</label></li>
+                    <li><input type="radio" id="2C" name="2" value="2C">
+                    <label for="2C">C. Carrot</label></li>
+                    <li><input type="radio" id="2D" name="2" value="2D">
+                    <label for="2D">D. Dragonfruit</label></li>
+                    </ul>
+                    <a href="#" class="btn btn-success checker" id="check2">Check</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to assessments -->
+        <div class="container-fluid bottom-bar mb-5">
+            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+            <a href="{% url 'assessment' %}" class="btn btn-lg btn-primary">Submit</a>
+        </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#check1').click(function(e){
+                e.preventDefault();
+                $('.list1 li').removeClass('correct');
+                $('.list1 li').removeClass('incorrect');
+                var selected = $('input[name="1"]:checked')
+                // console.log('Checked 1 lol' + selected);
+                if (selected.val() == "1A") {
+                    selected.parent().addClass('correct')
+                } else {
+                    selected.parent().addClass('incorrect')
+                }
+            });
+
+            $('#check2').click(function(e){
+                e.preventDefault();
+                $('.list2 li').removeClass('correct');
+                $('.list2 li').removeClass('incorrect');
+                var selected = $('input[name="2"]:checked')
+                // console.log('Checked 1 lol' + selected);
+                if (selected.val() == "2B") {
+                    selected.parent().addClass('correct')
+                } else {
+                    selected.parent().addClass('incorrect')
+                }
+            });
+        });
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+
+<head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-assessment").addClass("active");
+        });
+    </script>
+
+    <style>
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            color: navy;
+        }
+        .title-info{
+            font-size: 24px;
+        }
+
+        /* Answers */
+        .form-control{
+            /* width: 50%; */
+            margin-left: 15px;
+        }
+        li{
+            margin-bottom: 5px;
+        }
+
+        .bottom-bar{
+            text-align: right;
+        }
+    </style>
+
+    <title>Assessment: Eye-dentify</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid my-5 text-center">
+            <h1 class="pb-3">Eye-dentify</h1>
+            <p class="title-info">Identify and label the <strong>anatomy of the eyes</strong> correctly based on the numbers in the photo.</p>
+        </div>
+
+        <!-- Photo -->
+        <div class="container-fluid d-flex justify-content-center my-5">
+        <img src="https://i.pinimg.com/originals/ed/c0/f6/edc0f6b82d6f894acdc825ef38ca8136.jpg" alt="" class="">
+        </div>
+
+        <!-- Answer -->
+        <form action="">
+        <div class="container my-5">
+            <h4>Input your answers below</h4>
+            <ol>
+                <li><input type="text" class="form-control" id="answer1"></li>
+                <li><input type="text" class="form-control" id="answer2"></li>
+                <li><input type="text" class="form-control" id="answer3"></li>
+                <li><input type="text" class="form-control" id="answer4"></li>
+                <li><input type="text" class="form-control" id="answer5"></li>
+                <li><input type="text" class="form-control" id="answer6"></li>
+                <li><input type="text" class="form-control" id="answer7"></li>
+                <li><input type="text" class="form-control" id="answer8"></li>
+                <li><input type="text" class="form-control" id="answer9"></li>
+            </ol>
+        </div>
+
+        <!-- Back to assessments -->
+        <div class="container-fluid bottom-bar mb-5">
+            <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
+            <input type="submit" class="btn btn-lg btn-primary" value="Submit">
+        </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

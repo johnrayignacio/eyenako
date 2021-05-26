@@ -1,0 +1,111 @@
+{% extends 'rle_app/main.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Assessments</title>
+
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-assessment").addClass("active");
+        });
+    </script>
+
+    <style>
+        body{
+            background: #f8f5ec;
+        }
+
+        .title{
+            color: navy;
+            font-weight: bold;
+        }
+
+        /* Cards */
+        .card{
+            margin-bottom: 10px;
+        }
+        .crop-container{
+            height: 18rem;
+            overflow: hidden;
+        }
+        .img-icon{
+            /* height: 18rem; */
+            width: 100%;
+            position: relative;
+            top: -40px;
+        }
+        .card-text{
+            height: 4rem;
+        }
+        .card-title{
+            font-weight: bold;
+            font-size: 24px;
+            color: navy;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="container-fluid text-center my-5">
+            <h1 class="title">Interactive Assessment</h1>
+        </div>
+        
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="card">
+                    <div class="crop-container">
+                        <img src="https://image.freepik.com/free-vector/search-concept-illustration_114360-156.jpg" alt="" class="img-icon">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Eye-dentify</h5>
+                        <p class="card-text">Identify and label the <strong>anatomy of the eyes</strong> correctly</p>
+                        <a href="{% url 'assessment1' %}" class="btn btn-outline-primary w-100">Start now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="card">
+                    <div class="crop-container">
+                        <img src="https://image.freepik.com/free-vector/group-medical-staff-carrying-health-related-icons_53876-43071.jpg" alt="" class="img-icon">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Eye-thought, Eye-m fine</h5>
+                        <p class="card-text">A matching type game to test your <strong>diagnostics skills</strong></p>
+                        <a href="{% url 'assessment2' %}"  class="btn btn-outline-primary w-100">Start now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="card">
+                    <div class="crop-container">
+                        <img src="https://image.freepik.com/free-vector/health-professional-team-concept-illustration_114360-1608.jpg" alt="" class="img-icon">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Eye will complete</h5>
+                        <p class="card-text">Complete and fill in the <strong>crossword puzzle</strong> based on the given descriptions</p>
+                        <a href="{% url 'assessment3' %}"  class="btn btn-outline-primary w-100">Start now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="card">
+                    <div class="crop-container">
+                        <img src="https://image.freepik.com/free-vector/flat-hand-drawn-patient-taking-medical-examination_52683-57829.jpg" alt="" class="img-icon">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Eye care for you</h5>
+                        <p class="card-text">A series of multiple choice questions about <strong>treatment and nursing responsibilities</strong></p>
+                        <a href="{% url 'assessment4' %}"  class="btn btn-outline-primary w-100">Start now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
