@@ -7,6 +7,7 @@ urlpatterns = [
     path('assessment/', views.assessment, name="assessment"),
     path('assessment/eye-dentify', views.first_assessment, name="assessment1"),
     path('assessment/eye-thought', views.second_assessment, name="assessment2"),
-    path('assessment/eye-complete', views.third_assessment, name="assessment3"),
+    path('assessment/eye-complete/1', views.third_assessment, name="assessment3"),
+    path('assessment/eye-complete/2', views.third_assessment_2, name="assessment3-2"),
     path('assessment/eye-care', views.fourth_assessment, name="assessment4"),
 ]

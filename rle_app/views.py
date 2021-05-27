@@ -30,6 +30,10 @@ def third_assessment(request):
     context = {}
     return render(request, 'rle_app/assessment3.html')
 
+def third_assessment_2(request):
+    context = {}
+    return render(request, 'rle_app/assessment3-2.html')
+
 def fourth_assessment(request):
     context = {}
     return render(request, 'rle_app/assessment4.html')
