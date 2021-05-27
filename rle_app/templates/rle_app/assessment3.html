@@ -40,12 +40,12 @@
         }
 
         /* Answer results */
-        .incorrect input, .incorrect input:focus{
+        .incorrect input, .incorrect .form-control:focus{
             border-color: red!important;
             border-width: 2px!important;
             background: lightpink!important;
         }
-        .correct input{
+        .correct input,  .correct .form-control:focus{
             border-color: green;
             border-width: 2px;
             background: lightgreen;
@@ -63,9 +63,14 @@
             <p class="title-info">Complete and fill in the <strong>crossword puzzle</strong> based on the given descriptions</p>
         </div>
 
+        <div class="container w-50 d-flex justify-content-between">
+            <a href="{% url 'assessment3' %}"><div class="btn btn-lg btn-primary">Eye Disorders I</div></a>
+            <a href="{% url 'assessment3-2' %}"><div class="btn btn-lg btn-outline-primary">Eye Disorders II</div></a>
+        </div>
+
         <!-- Photo -->
         <div class="container-fluid d-flex justify-content-center my-5">
-            <img src="https://lh3.google.com/u/0/d/1mvN4egsrhjTOIYLwsHDFFWZ4KQ6-Ake2=w2970-h1818-iv1" alt="" class="w-75">
+            <img src="https://i.ibb.co/zX3fzX4/Eye-Disorders-I-Worksheet.jpg" alt="" class="w-75">
         </div>
 
         <!-- Answer -->
@@ -76,7 +81,7 @@
                 <div class="col col-md-6">
                     <h5>Down</h5>
                     <ol class="list-unstyled">
-                        <li><span>1. </span><input type="text" class="form-control" id="answer1"></li>
+                        <li>1. <input type="text" class="form-control" id="answer1"></li>
                         <li>2. <input type="text" class="form-control" id="answer2"></li>
                         <li>3. <input type="text" class="form-control" id="answer3"></li>
                         <li>4. <input type="text" class="form-control" id="answer4"></li>

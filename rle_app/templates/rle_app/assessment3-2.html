@@ -16,6 +16,11 @@
             font-weight: bold;
             color: navy;
         }
+
+        h5{
+            font-weight: bold;
+        }
+
         .title-info{
             font-size: 24px;
         }
@@ -29,12 +34,10 @@
             margin-bottom: 5px;
         }
 
-        .bottom-bar{
-            /* text-align: right; */
-            display: flex;
-            justify-content: space-between;
+        input[type=text]{
+            display: inline!important;
+            width: 90%!important;
         }
-
 
         /* Answer results */
         .incorrect input, .incorrect .form-control:focus{
@@ -47,47 +50,60 @@
             border-width: 2px;
             background: lightgreen;
         }
+
     </style>
 
-    <title>Assessment: Eye-dentify</title>
+    <title>Assessment: Eye will complete</title>
 </head>
 
 <body>
     <div class="container">
         <div class="container-fluid my-5 text-center">
-            <h1 class="pb-3">Eye-dentify</h1>
-            <p class="title-info">Identify and label the <strong>anatomy of the eyes</strong> correctly based on the numbers in the photo.</p>
+            <h1 class="pb-3">Eye will complete</h1>
+            <p class="title-info">Complete and fill in the <strong>crossword puzzle</strong> based on the given descriptions</p>
+        </div>
+
+        <div class="container w-50 d-flex justify-content-between">
+            <a href="{% url 'assessment3' %}"><div class="btn btn-lg btn-outline-primary">Eye Disorders I</div></a>
+            <a href="{% url 'assessment3-2' %}"><div class="btn btn-lg btn-primary">Eye Disorders II</div></a>
         </div>
 
         <!-- Photo -->
         <div class="container-fluid d-flex justify-content-center my-5">
-        <img src="https://i.ibb.co/THCMBHK/Eyeball.png" alt="" class="">
+            <img src="https://i.ibb.co/ZdhQQTp/Eye-Disorders-II-Worksheet.jpg" alt="" class="w-75">
         </div>
 
         <!-- Answer -->
         <form action="">
-        <div class="container my-5">
-            <h4>Input your answers below</h4>
-            <ol>
-                <li><input type="text" class="form-control" id="answer1"></li>
-                <li><input type="text" class="form-control" id="answer2"></li>
-                <li><input type="text" class="form-control" id="answer3"></li>
-                <li><input type="text" class="form-control" id="answer4"></li>
-                <li><input type="text" class="form-control" id="answer5"></li>
-                <li><input type="text" class="form-control" id="answer6"></li>
-                <li><input type="text" class="form-control" id="answer7"></li>
-                <li><input type="text" class="form-control" id="answer8"></li>
-                <li><input type="text" class="form-control" id="answer9"></li>
-                <li><input type="text" class="form-control" id="answer10"></li>
-                <li><input type="text" class="form-control" id="answer11"></li>
-                <li><input type="text" class="form-control" id="answer12"></li>
-            </ol>
+        <div class="container-fluid my-5">
+            <h4 class="mb-4">Input your answers below</h4>
+            <div class="row text-center">
+                <div class="col col-md-6">
+                    <h5>Down</h5>
+                    <ol class="list-unstyled">
+                        <li>1. <input type="text" class="form-control" id="answer1"></li>
+                        <li>2. <input type="text" class="form-control" id="answer2"></li>
+                        <li>3. <input type="text" class="form-control" id="answer3"></li>
+                        <li>4. <input type="text" class="form-control" id="answer4"></li>
+                </div>
+                <div class="col col-md-6">
+                    <h5>Across</h5>
+                    <ol class="list-unstyled">
+                        <li>5. <input type="text" class="form-control" id="answer5"></li>
+                        <li>6. <input type="text" class="form-control" id="answer6"></li>
+                        <li>7. <input type="text" class="form-control" id="answer7"></li>
+                        <li>8. <input type="text" class="form-control" id="answer8"></li>
+                        <li>9. <input type="text" class="form-control" id="answer9"></li>
+                        <li>10. <input type="text" class="form-control" id="answer10"></li>
+                    </ol>
+                </div>
+            </div>
         </div>
 
         <!-- Back to assessments -->
-        <div class="container-fluid bottom-bar mb-5">
+        <div class="container-fluid d-flex justify-content-between mb-5">
             <div class="score">
-                <h4>Score: <strong id="score">0</strong>/12</h4>
+                <h4><strong id="score">0</strong>/10 correct</h4>
             </div>
             <div class="controls">
                 <a href="{% url 'assessment' %}" class="btn btn-lg btn-secondary">Back</a>
@@ -96,7 +112,6 @@
         </div>
         </form>
     </div>
-
     <script>
         $("#submit").click(function(e){
             e.preventDefault();
@@ -113,79 +128,65 @@
             var answer8 = $("#answer8");
             var answer9 = $("#answer9");
             var answer10 = $("#answer10");
-            var answer11 = $("#answer11");
-            var answer12 = $("#answer12");
 
-            if (answer1.val().toLowerCase() == "zonule fibers") {
+            if (answer1.val().toLowerCase() == "painlessblurring") {
             answer1.parent().addClass('correct')
             } else {
                 answer1.parent().addClass('incorrect')
             }
 
-            if (answer2.val().toLowerCase() == "iris") {
+            if (answer2.val().toLowerCase() == "keratitis") {
             answer2.parent().addClass('correct')
             } else {
                 answer2.parent().addClass('incorrect')
             }
 
-            if (answer3.val().toLowerCase() == "lens") {
+            if (answer3.val().toLowerCase() == "false") {
             answer3.parent().addClass('correct')
             } else {
                 answer3.parent().addClass('incorrect')
             }
 
-            if (answer4.val().toLowerCase() == "light") {
+            if (answer4.val().toLowerCase() == "uvea") {
             answer4.parent().addClass('correct')
             } else {
                 answer4.parent().addClass('incorrect')
             }
 
-            if (answer5.val().toLowerCase() == "cornea") {
+            if (answer5.val().toLowerCase() == "cataract") {
             answer5.parent().addClass('correct')
             } else {
                 answer5.parent().addClass('incorrect')
             }
 
-            if (answer6.val().toLowerCase() == "aqueous humor") {
+            if (answer6.val().toLowerCase() == "floaters") {
             answer6.parent().addClass('correct')
             } else {
                 answer6.parent().addClass('incorrect')
             }
 
-            if (answer7.val().toLowerCase() == "ciliary muscle") {
+            if (answer7.val().toLowerCase() == "retinoblastoma") {
             answer7.parent().addClass('correct')
             } else {
                 answer7.parent().addClass('incorrect')
             }
 
-            if (answer8.val().toLowerCase() == "vitreous humor") {
+            if (answer8.val().toLowerCase() == "background") {
             answer8.parent().addClass('correct')
             } else {
                 answer8.parent().addClass('incorrect')
             }
 
-            if (answer9.val().toLowerCase() == "sclera") {
+            if (answer9.val().toLowerCase() == "hordeolum") {
             answer9.parent().addClass('correct')
             } else {
                 answer9.parent().addClass('incorrect')
             }
 
-            if (answer10.val().toLowerCase() == "optic nerve") {
+            if (answer10.val().toLowerCase() == "maculardegeneration") {
             answer10.parent().addClass('correct')
             } else {
                 answer10.parent().addClass('incorrect')
-            }
-
-            if (answer11.val().toLowerCase() == "fovea") {
-            answer11.parent().addClass('correct')
-            } else {
-                answer11.parent().addClass('incorrect')
-            }
-
-            if (answer12.val().toLowerCase() == "retina") {
-            answer12.parent().addClass('correct')
-            } else {
-                answer12.parent().addClass('incorrect')
             }
 
             var num_correct = $('.correct').length
