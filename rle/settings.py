@@ -25,7 +25,7 @@ SECRET_KEY = 'l2n$42mni4%uu)hh9gxmwqg)zbh@@6rwp1)2c#3v0(1o#h=&if'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sinesclera.herokuapp.com', 'web-production-378a.up.railway.app' '127.0.0.1']
+ALLOWED_HOSTS = ['sinesclera.herokuapp.com', 'web-production-378a.up.railway.app', '127.0.0.1']
 
 
 # Application definition
